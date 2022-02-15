@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./product.css";
 import StarIcon from "@mui/icons-material/Star";
-function Product({ name, stars, price }) {
+import { UserContext } from "../../userContext";
+function Product({ name, stars, price, id }) {
+  const { cart, setCart } = useContext(UserContext);
   return (
     <div className="product">
       <h3>{name && name}</h3>
@@ -13,7 +15,7 @@ function Product({ name, stars, price }) {
           })}
       </div>
       <img src="logo192.png" />
-      <button>Add to Cart</button>
+      <button onClick={() => setCart([...cart, { id }])}>Add to Cart</button>
     </div>
   );
 }

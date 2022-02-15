@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { UserContext } from "../../userContext";
 function Header() {
+  const { cart } = useContext(UserContext);
+
   return (
     <>
       <header className="header">
@@ -26,7 +29,7 @@ function Header() {
           </div>
           <div className="cart">
             <ShoppingCartOutlinedIcon />
-            <p>1</p>
+            <p>{cart.length}</p>
           </div>
         </div>
       </header>
