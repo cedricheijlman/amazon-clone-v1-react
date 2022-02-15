@@ -5,6 +5,7 @@ import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import { UserContext } from "./userContext";
 import { useEffect, useState } from "react";
+import Checkout from "./components/checkout/Checkout";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -27,6 +28,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </div>
     </UserContext.Provider>

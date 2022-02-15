@@ -3,6 +3,7 @@ import "./header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { UserContext } from "../../userContext";
+import { Link } from "react-router-dom";
 function Header() {
   const { cart } = useContext(UserContext);
 
@@ -28,7 +29,9 @@ function Header() {
             <h5>Prime</h5>
           </div>
           <div className="cart">
-            <ShoppingCartOutlinedIcon />
+            <Link to="/checkout">
+              <ShoppingCartOutlinedIcon />
+            </Link>
             <p>{cart.length}</p>
           </div>
         </div>
